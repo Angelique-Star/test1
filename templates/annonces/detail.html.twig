@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %} {% block stylesheets %}
+<link href="{{ asset('css/homepage.css') }}" rel="stylesheet"> {% endblock %} {% block body %}
+<div class="col-lg-9">
+
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+            <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    {{annonce.titre}}
+                </h4>
+                <h5>{{ annonce.price }}</h5>
+                <p class="card-text">{{annonce.content}}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Créé le{{ annonce.createdAt|date('d/m/Y à H:i:s') }}</small>
+            </div>
+        </div>
+        <div class="card card-outline-secondary my-4">
+            <div class="card-header">
+                Product Reviews
+            </div>
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolore consequuntur dolorem voluptatibus. Ea earum assumenda officia exercitationem deserunt, quod velit necessitatibus dignissimos repudiandae excepturi enim! Maxime
+                    sint qui similique!</p>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem laudantium nulla officia nostrum veritatis dolorem rerum dolores ratione soluta! Vel deleniti nobis obcaecati, aspernatur facilis hic. Quis perferendis labore nisi.
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

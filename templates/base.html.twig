@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}My project1{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet"> {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+    {% include 'navbar.html.twig' %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                {% block categories %}
+                <h1 class="my-4">Mes services</h1>
+                <div class="list-group">
+                    {% for category in categories %}
+                    <a href="{{ path('index', {'id' : category.id}) }}" class="list-group-item">{{category.name}}</a> {% endfor %}
+                </div>
+                {% endblock %}
+            </div>
+            <!-- /.col-lg-3 -->
+            {% block body %}{% endblock %}
+
+        </div>
+    </div>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- /.container -->
+    {% block javascripts %}{% endblock %}
+</body>
+
+</html>
